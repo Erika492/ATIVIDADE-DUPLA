@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    background-color: #a6ccf3;
+}
+
+body form input {
+    display: flex;
+}
+
+/*parte de baixo*/
+
+footer {
+    background-color: #003366;
+    margin-top: auto;
+    color: white;
+    margin: 0.6em;
+    display: flex;
+    padding: 1;
+}
+
+footer span {
+    display: flex;
+    margin: 0.6em;
+
+}
+
+form {
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+}
+
+
+input {
+    height: 2em;
+    border: 1px solid;
+    border-radius: 5px;
+}
