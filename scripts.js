@@ -1,6 +1,7 @@
 const ul = document.querySelector('ul')
 const input = document.querySelector('input')
 const form = document.querySelector('form')
+const li = document.createElement('li')
 
 /*
 
@@ -19,7 +20,8 @@ load()
 */
 
 function addElement({ name, url }) {
-    
+    li.innerHTML = `<li>${name} ${url}</li>`
+    ul.appendChild(li)
 }
 
 function removeElement(element) {
