@@ -4,7 +4,6 @@ const form = document.querySelector('form')
 const li = document.createElement('li')
 
 /*
-
 // Não se preocupem com esse pedaço de código comentado! Vamos descomentá-lo quando tivermos acabado de construir a API.
 
 // Função que carrega o conteúdo da API.
@@ -15,38 +14,29 @@ async function load() {
     // Iterando no vetor com o conteúdo (JSON) que está vindo da API e adicionando-os no frontend.
     res.urls.map(({name, url}) => addElement({name, url}))
 }
-
 load()
 */
 
-function addElement({ name, url }) {
-    // Cria um novo elemento de lista <li>
-    const li = document.createElement('li');
-
-    // Cria um novo elemento de âncora <a>
-    const a = document.createElement('a');
-  
-    // Define o atributo href do elemento de âncora com o valor da variável 'url'
-    a.href = url;
-  
-    // Define o conteúdo de texto do elemento de âncora com o valor da variável 'name'
-    a.textContent = name;
-  
-    // Adiciona o elemento de âncora como filho do elemento de lista
-    li.appendChild(a);
-  
-    // Adiciona o elemento de lista como filho de um elemento 'ul' (pressupõe-se que 'ul' já existe no HTML)
-    ul.appendChild(li);
+function addElement({ name, url }) { // Cria um novo elemento de lista <li>
+    const li = document.createElement('li')
+    const a = document.createElement('a') // Cria um novo elemento de âncora <a>
+    a.href = url; // Define o atributo href do elemento de âncora com o valor da variável 'url'
+    a.textContent = name // Define o conteúdo de texto do elemento de âncora com o valor da variável 'name'
+    li.appendChild(a)// Adiciona o elemento de âncora como filho do elemento de lista
+    ul.appendChild(li)// Adiciona o elemento de lista como filho de um elemento 'ul' (pressupõe-se que 'ul' já existe no HTML)
   }
   
   
-function removeElement(element) {
-    // criem os códigos
+function removeElement() {
+    const li = document.querySelector(`li[data-name="${name}"]`);
+    if (li) {
+        ul.removeChild(li)
+    }
 }
 
 form.addEventListener('submit', (event) => {
     
-    event.preventDefault();
+    event.preventDefault()
 
     let { value } = input
 
