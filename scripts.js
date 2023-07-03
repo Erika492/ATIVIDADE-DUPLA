@@ -20,10 +20,26 @@ load()
 */
 
 function addElement({ name, url }) {
-    li.innerHTML = `<li>${name} ${url}</li>`
-    ul.appendChild(li)
-}
+    // Cria um novo elemento de lista <li>
+    const li = document.createElement('li');
 
+    // Cria um novo elemento de âncora <a>
+    const a = document.createElement('a');
+  
+    // Define o atributo href do elemento de âncora com o valor da variável 'url'
+    a.href = url;
+  
+    // Define o conteúdo de texto do elemento de âncora com o valor da variável 'name'
+    a.textContent = name;
+  
+    // Adiciona o elemento de âncora como filho do elemento de lista
+    li.appendChild(a);
+  
+    // Adiciona o elemento de lista como filho de um elemento 'ul' (pressupõe-se que 'ul' já existe no HTML)
+    ul.appendChild(li);
+  }
+  
+  
 function removeElement(element) {
     // criem os códigos
 }
