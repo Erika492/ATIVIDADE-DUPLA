@@ -18,21 +18,24 @@ load()
 */
 
 function addElement({ name, url }) {
-    const li = document.createElement('li')
-    const a = document.createElement('a')
+    const li = document.createElement('li');
+    const a = document.createElement('a');
     a.href = url;
-    a.textContent = name
-    li.appendChild(a)
-    ul.appendChild(li)
+    a.textContent = name;
+    li.appendChild(a);
+    ul.appendChild(li);
 
-    const button = document.createElement('button') // Cria um novo elemento de botão <button>
-    button.textContent = 'Remover' // Define o conteúdo de texto do elemento de botão
-    li.appendChild(button) // Adiciona o elemento de botão como filho do elemento de lista
+    const button = document.createElement('button'); // Cria um novo elemento de botão <button>
+    button.textContent = 'x'; // Define o conteúdo de texto do elemento de botão
+    li.appendChild(button); // Adiciona o elemento de botão como filho do elemento de lista
 
     // Adiciona um ouvinte de eventos ao elemento de botão
     button.addEventListener('click', function() {
-        li.remove() // Remove o elemento de lista correspondente
-    })
+        const confirmDelete = confirm('Tem certeza de que deseja remover este elemento?');
+        if (confirmDelete) {
+            li.remove(); // Remove o elemento de lista correspondente
+        }
+    });
 }
 
 
