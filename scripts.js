@@ -17,22 +17,25 @@ async function load() {
 load()
 */
 
-function addElement({ name, url }) { // Cria um novo elemento de lista <li>
+function addElement({ name, url }) {
     const li = document.createElement('li')
-    const a = document.createElement('a') // Cria um novo elemento de âncora <a>
-    a.href = url; // Define o atributo href do elemento de âncora com o valor da variável 'url'
-    a.textContent = name // Define o conteúdo de texto do elemento de âncora com o valor da variável 'name'
-    li.appendChild(a)// Adiciona o elemento de âncora como filho do elemento de lista
-    ul.appendChild(li)// Adiciona o elemento de lista como filho de um elemento 'ul' (pressupõe-se que 'ul' já existe no HTML)
-  }
-  
-  
-function removeElement() {
-    const li = document.querySelector(`li[data-name="${name}"]`);
-    if (li) {
-        ul.removeChild(li)
-    }
+    const a = document.createElement('a')
+    a.href = url;
+    a.textContent = name
+    li.appendChild(a)
+    ul.appendChild(li)
+
+    const button = document.createElement('button') // Cria um novo elemento de botão <button>
+    button.textContent = 'Remover' // Define o conteúdo de texto do elemento de botão
+    li.appendChild(button) // Adiciona o elemento de botão como filho do elemento de lista
+
+    // Adiciona um ouvinte de eventos ao elemento de botão
+    button.addEventListener('click', function() {
+        li.remove() // Remove o elemento de lista correspondente
+    })
 }
+
+
 
 form.addEventListener('submit', (event) => {
     
